@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1"> <!-- Suite completa -->
+    <listeners> <!-- Escucha para las pruebas -->
+        <listener class-name="com.automation.testing.ListenerPrueba"/>
+    </listeners>
+    <parameter name="stringA" value="I love "/>
+    <parameter name="stringB" value="test automation"/>
+    <parameter name="stringC" value="test Java"/>
+    <parameter name="stringRes1" value="I love test automation"/>
+    <parameter name="stringRes2" value="I love test Java"/>
+    <parameter name="stringRes3" value="I love test Everything"/>
+    <parameter name="DestinyPage" value="https://www.wikipedia.org/"/>
+    <parameter name="ButtonXPath" value="//*[@id='search-form']/fieldset/button"/>
+    <parameter name="datoBusqueda" value="Pet Shop Boys"/>
+    <parameter name="browser" value="Chrome"/>
+    <test name="Regression1"> <!-- Prueba entera, contiene varios casos de prueba-->
+        <groups>
+            <run>
+                <include name="wiki"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.automation.testing"/> <!-- Casos de prueba -->
+        </packages>
+
+    </test>
+</suite>
